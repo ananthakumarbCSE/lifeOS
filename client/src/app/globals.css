@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Silent Coder Color Palette */
+  --color-bg-primary: #0D1117;
+  --color-bg-surface: #161B22;
+  --color-bg-elevated: #1C2128;
+  --color-bg-hover: #21262D;
+  --color-bg-active: #262C36;
+
+  --color-accent: #2E8B57;
+  --color-accent-hover: #3BA06A;
+  --color-accent-muted: #2E8B5733;
+
+  --color-text-primary: #E6EDF3;
+  --color-text-secondary: #8B949E;
+  --color-text-muted: #6E7681;
+  --color-text-inverse: #0D1117;
+
+  --color-border-default: #30363D;
+  --color-border-muted: #21262D;
+  --color-border-accent: #2E8B57;
+
+  --color-warning: #D97706;
+  --color-warning-bg: #D9770615;
+  --color-danger: #DC2626;
+  --color-danger-bg: #DC262615;
+  --color-success: #16A34A;
+  --color-success-bg: #16A34A15;
+  --color-info: #3B82F6;
+  --color-info-bg: #3B82F615;
+
+  /* Node type colors */
+  --color-node-goal: #2E8B57;
+  --color-node-task: #3B82F6;
+  --color-node-project: #8B5CF6;
+  --color-node-event: #D97706;
+  --color-node-milestone: #EC4899;
+  --color-node-warning: #DC2626;
+
+  /* Priority colors */
+  --color-priority-critical: #DC2626;
+  --color-priority-high: #D97706;
+  --color-priority-medium: #3B82F6;
+  --color-priority-low: #6E7681;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Spacing */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent-muted);
+  color: var(--color-text-primary);
+}
+
+/* React Flow overrides */
+.react-flow__background {
+  background-color: var(--color-bg-primary) !important;
+}
+
+.react-flow__minimap {
+  background-color: var(--color-bg-surface) !important;
+  border: 1px solid var(--color-border-default) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.react-flow__controls {
+  border: 1px solid var(--color-border-default) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background-color: var(--color-bg-elevated) !important;
+  border-bottom: 1px solid var(--color-border-default) !important;
+  fill: var(--color-text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: var(--color-bg-hover) !important;
+}
+
+/* Transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
